@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <springProperty scope="context" name="logFilename"
+                    source="spring.application.name"/>
+
+    <springProperty scope="context" name="logPath"
+                    source="logging.path"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="com.temitope.common.utils.logging.MaskingPatternLayout">
+                <maskPattern>cvv=(.*?)[,|\)]|\"cvv\"\s*:\s*\"(.*?)\"</maskPattern> <!-- cvv LOMBOK AND JSON pattern -->
+                <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class{36}.%M %L - %X{RT-CORRELATION-ID} - %msg%n</pattern>
+            </layout>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/${logFilename}.log
+        </file>
+        <append>true</append>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="com.temitope.common.utils.logging.MaskingPatternLayout">
+                <maskPattern>cvv=(.*?)[,|\)]|\"cvv\"\s*:\s*\"(.*?)\"</maskPattern> <!-- cvv LOMBOK AND JSON pattern -->
+                <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class{36}.%M %L - %X{RT-CORRELATION-ID} - %msg%n</pattern>
+            </layout>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${logPath}/${logFilename}-%d{dd-MM-yyyy}.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <logger name="org.springframework" additivity="false">
+        <level value="WARN"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger name="org.apache.camel.component.file.FileConsumer"
+            level="OFF" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="com.zaxxer.hikari.pool" level="WARN" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.redisson" level="WARN" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="io.netty" level="WARN" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger name="org.apache.kafka" level="WARN" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger name="io.lettuce.core.AbstractRedisClient" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger name="com.temitope" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <root level="WARN" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</included>

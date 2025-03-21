@@ -1,0 +1,16 @@
+2025-03-19 09:24:24.765 INFO  o.s.boot.StartupInfoLogger.logStarting 53 -  - Starting EmailNotificationServiceApplicationTests using Java 17.0.12 with PID 71892 (started by temitopeajayi in /Users/temitopeajayi/Downloads/kafka-project/email-notification-service)
+2025-03-19 09:24:24.766 DEBUG o.s.boot.StartupInfoLogger.logStarting 54 -  - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-19 09:24:24.766 INFO  o.s.boot.SpringApplication.logStartupProfileInfo 658 -  - The following 1 profile is active: "dev"
+2025-03-19 09:24:25.470 INFO  o.s.boot.StartupInfoLogger.logStarted 59 -  - Started EmailNotificationServiceApplicationTests in 0.879 seconds (process running for 1.261)
+2025-03-19 09:27:42.122 INFO  o.s.boot.StartupInfoLogger.logStarting 53 -  - Starting EmailNotificationServiceApplicationTests using Java 17.0.12 with PID 72147 (started by temitopeajayi in /Users/temitopeajayi/Downloads/kafka-project/email-notification-service)
+2025-03-19 09:27:42.123 DEBUG o.s.boot.StartupInfoLogger.logStarting 54 -  - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-19 09:27:42.124 INFO  o.s.boot.SpringApplication.logStartupProfileInfo 658 -  - The following 1 profile is active: "dev"
+2025-03-19 09:27:42.811 INFO  o.s.boot.StartupInfoLogger.logStarted 59 -  - Started EmailNotificationServiceApplicationTests in 0.86 seconds (process running for 1.235)
+2025-03-19 09:29:44.550 INFO  o.s.boot.StartupInfoLogger.logStarting 53 -  - Starting EmailNotificationServiceApplicationTests using Java 17.0.12 with PID 72346 (started by temitopeajayi in /Users/temitopeajayi/Downloads/kafka-project/email-notification-service)
+2025-03-19 09:29:44.551 DEBUG o.s.boot.StartupInfoLogger.logStarting 54 -  - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-19 09:29:44.551 INFO  o.s.boot.SpringApplication.logStartupProfileInfo 658 -  - The following 1 profile is active: "dev"
+2025-03-19 09:29:45.233 INFO  o.s.boot.StartupInfoLogger.logStarted 59 -  - Started EmailNotificationServiceApplicationTests in 0.855 seconds (process running for 1.226)
+2025-03-19 09:39:00.070 INFO  o.s.boot.StartupInfoLogger.logStarting 53 -  - Starting EmailNotificationServiceApplicationTests using Java 17.0.12 with PID 78582 (started by temitopeajayi in /Users/temitopeajayi/Downloads/kafka-project/email-notification-service)
+2025-03-19 09:39:00.071 DEBUG o.s.boot.StartupInfoLogger.logStarting 54 -  - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-19 09:39:00.072 INFO  o.s.boot.SpringApplication.logStartupProfileInfo 658 -  - The following 1 profile is active: "dev"
+2025-03-19 09:39:00.746 INFO  o.s.boot.StartupInfoLogger.logStarted 59 -  - Started EmailNotificationServiceApplicationTests in 0.839 seconds (process running for 1.265)
