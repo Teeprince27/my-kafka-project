@@ -23,7 +23,7 @@ public class ProductController {
 		this.productService = productService;
 	}
 	
-	@PostMapping
+	@PostMapping(value = "/create")
 	public ResponseEntity<Object> createProduct(@RequestBody CreateProductRestModel product) {
 		
 		String productId = null;
