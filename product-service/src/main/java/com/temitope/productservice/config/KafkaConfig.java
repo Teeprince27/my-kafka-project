@@ -37,7 +37,22 @@ public class KafkaConfig {
 
     @Value("${spring.kafka.producer.properties.request.timeout.ms}")
     private String requestTimeout;
-	
+
+	@Value("${topic.name}")
+	private String topicName;
+
+	@Value("${partition.count}")
+	private int partitionCount;
+
+	@Value("${replica.count}")
+	private int replicaCount;
+
+	@Value("${min.insync.replicas}")
+	private String minInsyncReplicas;
+
+	@Value("${min.insync.replicas.value}")
+	private String minInsyncReplicasValue;
+
 	Map<String, Object> producerConfigs() {
 		Map<String, Object> config = new HashMap<>();
 		
@@ -64,10 +79,10 @@ public class KafkaConfig {
 	
 	@Bean
 	NewTopic createTopic() {
-		return TopicBuilder.name("product-created-events-topic")
-				.partitions(3)
-//				.replicas(3)
-				.configs(Map.of("min.insync.replicas","2"))
+		return TopicBuilder.name(topicName)
+				.partitions(partitionCount)
+				.replicas(replicaCount)
+				.configs(Map.of(minInsyncReplicas, minInsyncReplicasValue))
 				.build();
 	}
 

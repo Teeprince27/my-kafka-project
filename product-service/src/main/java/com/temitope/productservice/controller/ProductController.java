@@ -1,6 +1,6 @@
 package com.temitope.productservice.controller;
 
-import com.temitope.productservice.dto.CreateProductRestModel;
+import com.temitope.productservice.dto.CreateProductRequestDto;
 import com.temitope.productservice.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,7 @@ public class ProductController {
 	}
 	
 	@PostMapping(value = "/create")
-	public ResponseEntity<Object> createProduct(@RequestBody CreateProductRestModel product) {
+	public ResponseEntity<Object> createProduct(@RequestBody CreateProductRequestDto product) {
 		
 		String productId = null;
 		try { 
